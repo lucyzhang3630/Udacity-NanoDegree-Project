@@ -60,7 +60,11 @@ section#intro {
   text-align: center;
   color: white;
 }
-
+@media screen and (min-width: 1000px) {
+  section#intro {
+    width: 970px;
+  }
+}
 @media screen and (max-width: 500px) {
   #introTitle {
     position: absolute;
