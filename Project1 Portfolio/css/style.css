@@ -1,0 +1,144 @@
+img {
+  width: 100%;
+}
+
+@media screen and (min-width: 1000px) {
+  main,nav,footer{
+    width: 1000px;
+    margin: auto;
+  }
+}
+
+/*override Bootstrap's default styles */
+
+@media (min-width: 768px) {
+  ul.navbar-nav {
+      float: right;
+      margin: 0;
+  }
+}
+
+.navbar-toggle .icon-bar {
+  background: #337ab7;
+}
+
+/*override ends*/
+
+/*style for nav */
+
+@media screen and (min-width: 1000px) {
+  ul.navbar-nav>li {
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  div.navbar-header>a {
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+.myLogo {
+  width: 8%;
+  float: left;
+  margin-top: 9px;
+}
+
+@media screen and (min-width: 750px) {
+  .myLogo {
+    width: 8%;
+    float: left;
+    margin-top: 15px;
+  }
+}
+/*style for nav ends*/
+
+/*style for intro section*/
+
+section#intro {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+@media screen and (max-width: 500px) {
+  #introTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .introImg {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (min-width: 501px) {
+  #introTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: 900;
+  }
+  .introImg {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .introImg{
+    padding: 0;
+  }
+}
+
+/*style for intro section ends */
+
+/*style for projects section */
+
+#projects>h4 {
+  margin-left: 3%;
+  color: #337ab7;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 501px) {
+  #projects>h4 {
+    margin-left: 2%;
+    color: #337ab7;
+    font-weight: bold;
+  }
+}
+
+.project>figure>a {
+  word-wrap: break-word;
+}
+
+.project>figure>figcaption {
+  color: #337ab7;
+  font-weight: bold;
+}
+/*style for projects section ends */
+
+/*style for footer */
+
+footer.container-fluid.text-center {
+  background: #ddd;
+  padding: 0 15px;
+}
+
+@media screen and (min-width: 1000px) {
+  footer.container-fluid.text-center {
+    width: 970px;
+  }
+}
+.copyRight {
+  margin: 1% 0;
+  color: #337ab7;
+}
+
+/*style for footer ends */
