@@ -13,7 +13,6 @@ img {
 
 @media (min-width: 768px) {
   ul.navbar-nav {
-      float: right;
       margin: 0;
   }
 }
@@ -38,16 +37,20 @@ img {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  ul.navbar-nav {
+    padding-left: 20px;
+  }
+}
+
 .myLogo {
   width: 8%;
-  float: left;
   margin-top: 9px;
 }
 
 @media screen and (min-width: 750px) {
   .myLogo {
     width: 8%;
-    float: left;
     margin-top: 15px;
   }
 }
