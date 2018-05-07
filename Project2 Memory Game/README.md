@@ -3,6 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
+* [How to play](#How to play)
 * [Contributing](#contributing)
 
 ## Instructions
