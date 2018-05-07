@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [How to play](#How to play)
+* [How to play](#HowToPlay)
 * [Contributing](#contributing)
 
 ## Instructions
@@ -16,11 +16,16 @@ For specific, detailed instructions, look at the project instructions in the [Ud
 
 To run the project, click on the `index.html`, it will run in your default browser.
 
-## How to play
+## HowToPlay
+
 1 randomly click on cards, if the icons match, the 2 cards will stay open.
+
 2 the timer, moves counter and stars are all ways to measure your performance.
+
 3 you can reset the game any time by clicking on the restart icon.
+
 4 when you have matched all the cards, a modal will pop up, showing your performance rating.
+
 5 you can simply close the pop up modal, or start one more game by clicking on the `start new game` button on the modal.
 
 ## Contributing
