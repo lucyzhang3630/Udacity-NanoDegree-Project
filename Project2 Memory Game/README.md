@@ -32,6 +32,7 @@ To run the project, click on the `index.html`, it will run in your default brows
 ## Dependencies
 
 1 **Bootstrap** cdn is used for page layout design and is included in `index.html`.
+
 2 **JQuery** cdn is used for performing functionalities and is included in `index.html` as well.
 
 ## Contributing

@@ -11,10 +11,9 @@
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
-var iconArray = ['fa-diamond','fa-diamond','fa-paper-plane-o','fa-paper-plane-o',
-                'fa-anchor','fa-anchor','fa-bolt','fa-bolt',
-                'fa-cube','fa-cube','fa-leaf','fa-leaf',
-                'fa-bicycle','fa-bicycle','fa-bomb','fa-bomb'];
+var icons = ['fa-diamond','fa-paper-plane-o','fa-anchor','fa-bolt',
+             'fa-cube','fa-leaf','fa-bicycle','fa-bomb'];
+var iconArray = icons.concat(icons);
 var counter = 0;
 var clickedCards = [];
 var seconds = 0;
@@ -37,12 +36,13 @@ function shuffle(array) {
 
 //Initialize game
 function initializeGame() {
-  clickedCards = [];
+
   var shuffledIcons = shuffle(iconArray);
   var iconElements = document.querySelectorAll('li.card>i.fa');
   var movesCounter = document.querySelector('span.moves');
   var cardBoard = document.querySelector('ul.deck');
   var iconBoards = document.querySelectorAll('li.card');
+  clickedCards = [];
   //set the initial ratings
   document.querySelector('ul.stars').innerHTML = `<li><i class="fa fa-star"></i></li>
   <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`
@@ -136,23 +136,25 @@ function timer() {
   },1000)
 }
 
+//funcitonality for final result popup modal
 function showResult() {
 
   var matchedCards = document.querySelectorAll('li.match');
   var selector = "ul.finalScore";
   var finalTime = document.querySelector("span.time").textContent;
 
+  //when modal is open, clear the interval handler.
   if(matchedCards.length === 16) {
     clearInterval(showResultModal);
     clearInterval(timerIntervalHandler);
     $("#successModal").modal();
   }
-  //when modal is open, clear the interval handler.
+
   setRating(selector);
   document.querySelector("span.finalTime").textContent = finalTime;
 }
 
-//set the cards on page loads
+//Initialize the game on page loads
 document.addEventListener("DOMContentLoaded", initializeGame);
 
 
