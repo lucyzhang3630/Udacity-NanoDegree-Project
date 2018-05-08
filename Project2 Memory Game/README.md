@@ -4,6 +4,7 @@
 
 * [Instructions](#instructions)
 * [How to play](#HowToPlay)
+* [Dependencies](#Dependencies)
 * [Contributing](#contributing)
 
 ## Instructions
@@ -27,6 +28,11 @@ To run the project, click on the `index.html`, it will run in your default brows
 4 when you have matched all the cards, a modal will pop up, showing your performance rating.
 
 5 you can simply close the pop up modal, or start one more game by clicking on the `start new game` button on the modal.
+
+## Dependencies
+
+1 **Bootstrap** cdn is used for page layout design and is included in `index.html`.
+2 **JQuery** cdn is used for performing functionalities and is included in `index.html` as well.
 
 ## Contributing
 
