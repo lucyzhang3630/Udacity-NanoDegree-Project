@@ -1,3 +1,5 @@
+// TODO: add timer
+// TODO: add life and points functionalities
 // Enemies our player must avoid
 var Enemy = function(y,speed) {
     // Variables applied to each of our instances go here,
@@ -86,7 +88,7 @@ var allEnemies = [enemy1,enemy2,enemy3];
 var player = new Player();
 
 
-// This listens for key presses and sends the keys to Player.handleInput() method. 
+// This listens for key presses and sends the keys to Player.handleInput() method.
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
