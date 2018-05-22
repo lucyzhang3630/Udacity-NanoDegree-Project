@@ -1,0 +1,29 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header.mainHeader,
+div.counter {
+  text-align: center;
+}
+
+img.cat {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:70%;
+}
