@@ -29,7 +29,7 @@ $(function() {
          for(let i = 0; i < allFeeds.length; i++){
            it('URL is defined and not empty', function() {
              expect(allFeeds[i].url).toBeDefined();
-             expect(allFeeds[i].url,length).not.toEqual(0);
+             expect(allFeeds[i].url.length).not.toEqual(0);
            });
          }
 
@@ -48,15 +48,16 @@ $(function() {
     /* test suite for menu */
     describe('The Menu',function() {
 
+      var body = $('body');
+
       // test if the menu element is hidden by default.
       it('should be hidden by default',function() {
-        expect($('body').attr('class')).toEqual('menu-hidden');
+        expect(body.hasClass('menu-hidden')).toBe(true);
       });
 
       // test if the menu changes visibility when the menu icon is clicked.
        it('should toggle the menu display when the menu icon is clicked', function() {
          var menuIcon = $('.menu-icon-link');
-         var body = $('body');
          menuIcon.click();
          expect(body.hasClass('menu-hidden')).toBe(false);
          menuIcon.click();
@@ -87,14 +88,15 @@ $(function() {
     describe('New Feed Selection',function() {
       /* when a new feed is loaded by the loadFeed function,
        * test if content actually changes.
-       * by default page is loading with id=0, so make id=1 to load new feed
+       * calling loadFeed with id=0 and id=1 to mimic the change of content
        */
        var preFeed;
        beforeEach(function(done) {
-         var id = 1;
-         preFeed = $('.feed').find('.entry')[0].textContent;
-         loadFeed(id, function() {
-             done();
+         loadFeed(0, function() {
+            preFeed = $('.feed').find('.entry')[0].textContent;
+            loadFeed(1, function() {
+              done();
+            })
            });
        });
        it('should load new feed content', function(done) {
