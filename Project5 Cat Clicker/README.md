@@ -8,7 +8,7 @@
 ## Instructions
 
 This is a Sample Cat Clicker Project, written by `html`, `css` and `js`.
-It just increments the count of clicks every time you click on the cat image.
+It increments the count of clicks every time you click on the cat image, no matter which cat you clicked on.
 
 To run this project, click on `index.html`, it will run in your default browser
 
