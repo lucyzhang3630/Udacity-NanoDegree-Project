@@ -8,7 +8,9 @@
 ## Instructions
 
 This is a Sample Cat Clicker Project, written by `html`, `css` and `js`.
-It increments the count of clicks every time you click on the cat image, no matter which cat you clicked on.
+By default, the first cat Amy is selected. You can change the cat by clicking on the cat name in the `nav` bar.
+It increments the count of clicks every time you click on the cat image.
+
 
 To run this project, click on `index.html`, it will run in your default browser
 

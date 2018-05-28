@@ -7,8 +7,17 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <nav class="catsNav">
+      <ul class="catsList" onclick="selectCat(event)">
+        <li class="catItem active">Amy</li>
+        <li class="catItem">Betty</li>
+        <li class="catItem">Cathy</li>
+        <li class="catItem">Doris</li>
+        <li class="catItem">Emily</li>
+      </ul>
+    </nav>
     <header class="mainHeader">
-      <h1>Cat Clicker</h1>
+      <h1 class="catName">Amy</h1>
     </header>
     <main class="container">
       <section>
@@ -17,12 +26,7 @@
           <span class="clicks">0</span>
         </div>
         <figure>
-          <img class="cat" src="images/cat.jpg" alt="cat" onclick="handleClick()">
-          <figcaption>cat1</figcaption>
-        </figure>
-        <figure>
-          <img class="cat" src="images/cat2.jpg" alt="cat" onclick="handleClick()">
-          <figcaption>cat2</figcaption>
+          <img class="catImage" src="images/Amy.jpg" alt="cat" onclick="handleClick()">
         </figure>
       </section>
     </main>
