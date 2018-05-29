@@ -56,3 +56,11 @@ img.catImage {
     margin-right: auto;
     width:60%;
 }
+
+div.admin {
+  padding: 0 50%;
+}
+
+div.catInfo {
+  padding: 1% 24%;
+}
