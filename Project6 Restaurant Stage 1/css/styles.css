@@ -120,7 +120,7 @@ nav h1 a {
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
-  margin: 0 20px;
+  margin: 0 30px;
 	padding-top: 1%
 }
 .filter-options select {
@@ -134,7 +134,9 @@ nav h1 a {
   padding: 0 10px;
   width: 200px;
 }
-
+select#neighborhoods-select {
+  margin-left: 30px;
+}
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
   background-color: #f3f3f3;
@@ -159,10 +161,15 @@ nav h1 a {
   width: 24%;/* for larger screen,display 3 restaurants in one row */
 	float: left;
 }
+@media screen and (max-width:770px) {
+	#restaurants-list li {
+		width: 37%;/*for ipad list 2 restaurants in one row */
+	}
+}
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
-  margin: 0;
+  margin: 30px 0;
   max-width: 100%;
   min-height: 248px;
   min-width: 100%;
