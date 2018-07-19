@@ -142,6 +142,11 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+	/*to contain floating li elements*/
+	overflow: hidden;
+	/*make li elements in equal heights*/
+	display: flex;
+  flex-wrap: wrap;
 }
 #restaurants-list li {
   background-color: #fff;
