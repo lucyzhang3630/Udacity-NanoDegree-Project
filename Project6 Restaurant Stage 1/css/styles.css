@@ -51,6 +51,11 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	float: left;
 	width: 100%;
 }
+@media screen and (max-width:360px) {
+	#footer {
+		padding: 10px 0px;
+	}
+}
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
@@ -58,6 +63,7 @@ nav {
   background-color: #252831;
   text-align:center;
 }
+
 nav h1 {
   margin: auto;
 	/* for large screen,center the content of header */
@@ -69,6 +75,17 @@ nav h1 a {
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
+}
+@media screen and (max-width:360px) {
+	nav {
+		height: 50px;
+	}
+	nav h1 {
+		padding-top: 10px;
+	}
+	nav h1 a {
+		letter-spacing: 0;
+	}
 }
 #breadcrumb {
     padding: 10px 40px 16px;
@@ -137,6 +154,24 @@ nav h1 a {
 select#neighborhoods-select {
   margin-left: 30px;
 }
+@media screen and (max-width:360px) {
+	.filter-options {
+		height: 75px;
+	}
+	.filter-options h2 {
+		margin: 0 18px;
+	}
+	select#neighborhoods-select {
+    margin-left: 18px;
+		margin-right: 5px;
+		width: 48%;
+	}
+	select#cuisines-select {
+    width: 37%;
+		margin-left: 5px;
+	}
+
+}
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
   background-color: #f3f3f3;
@@ -164,6 +199,11 @@ select#neighborhoods-select {
 @media screen and (max-width:770px) {
 	#restaurants-list li {
 		width: 37%;/*for ipad list 2 restaurants in one row */
+	}
+}
+@media screen and (max-width:360px) {
+	#restaurants-list li {
+		width: 100%;/*for Galaxy S5 list 1 restaurant in one row */
 	}
 }
 #restaurants-list .restaurant-img {
