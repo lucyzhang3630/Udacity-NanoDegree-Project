@@ -7,6 +7,7 @@ This is my repo of projects for Udacity's Front End Nano Degree. It will consist
 ### 3 Arcade Game
 ### 4 Test Driven RSS FeedReader
 ### 5 Cat Clicker
+### 6 Restaurant Reviews App
 
 # Getting Started
 To view this repo, you can simply download it or do ` git clone ` to get a local copy. For project specific information, please refer to the README.md inside each project
