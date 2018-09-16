@@ -4,16 +4,15 @@ var map
 let googleMarkers = [];
 
 class transitMap extends Component {
-  getGoogleMaps() {
+  loadGoogleMapsAPI() {
     // If we haven't already defined the promise, define it
     if (!this.googleMapsPromise) {
       this.googleMapsPromise = new Promise((resolve) => {
-        // Add a global handler for when the API finishes loading
+        // Add a global handler when the API finishes loading
         window.resolveGoogleMapsPromise = () => {
-          // Resolve the promise
+          // resolve the promise
           resolve(google);
-
-          // Tidy up
+          // clean up
           delete window.resolveGoogleMapsPromise;
         };
 
@@ -32,7 +31,7 @@ class transitMap extends Component {
 
   componentWillMount() {
     // Start Google Maps API loading
-    this.getGoogleMaps();
+    this.loadGoogleMapsAPI();
   }
 
   componentDidMount() {
