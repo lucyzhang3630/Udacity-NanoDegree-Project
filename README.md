@@ -9,6 +9,7 @@ This is my repo of projects for Udacity's Front End Nano Degree. It will consist
 ### 5 Cat Clicker
 ### 6 Restaurant Reviews App
 ### 7 My Reads App
+### 8 Neighborhood Map App
 
 # Getting Started
 To view this repo, you can simply download it or do ` git clone ` to get a local copy. For project specific information, please refer to the README.md inside each project
