@@ -4,6 +4,10 @@ import Map from './Map'
 
 let allLocations=[]
 let allMarkers=[]
+let googleMap
+let google
+let infoWindowPopup
+
 class App extends Component {
   state = {
     value:'',
@@ -30,8 +34,11 @@ class App extends Component {
     }
 
   }
-  getMarkers(markers) {
-    allMarkers=markers;
+  getMarkers(markers,map,googleVar,googleInfoWindow) {
+    allMarkers = markers;
+    googleMap = map;
+    google = googleVar;
+    infoWindowPopup = googleInfoWindow
   }
   handleChange(event) {
     this.setState({value: event.target.value});
@@ -62,7 +69,19 @@ class App extends Component {
     }
 
   }
+  toggleMarker(e) {
 
+    for(let i=0;i<allMarkers.length;i++){
+      if(allMarkers[i].properties===e.target.innerHTML) {
+        allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
+        infoWindowPopup.setContent(allMarkers[i].properties);
+        infoWindowPopup.open(googleMap,allMarkers[i]);
+        setTimeout(() => {
+          allMarkers[i].setAnimation(null)
+        },500)
+      }
+    }
+  }
   render() {
 
     return (
@@ -81,7 +100,7 @@ class App extends Component {
             </form>
             <ul id="locationsList">
               {this.state.locations.map((location,index)=>{
-                return (<li key={location} id={location} className={index}>{location}</li>)
+                return (<li key={location} id={location} className={index} onClick={this.toggleMarker} >{location}</li>)
               })}
             </ul>
           </div>

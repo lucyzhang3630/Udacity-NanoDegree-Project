@@ -14,3 +14,4 @@ This is a Map project build with `ReactJS` and bootstraped with [Create React Ap
 ### How to use
 *  After the app is up and running, if you click on the `hamburger icon`, a side nav will pop up, listing the locations corresponding to the markers, you can filter the markers with the input area.
 * If you click on the marker, an `info-window` will pop up, showing the location info about the marker.
+* If you click on the locations in the side nav, corresponding marker will bounce and the infoWindow for that location will also pop up.

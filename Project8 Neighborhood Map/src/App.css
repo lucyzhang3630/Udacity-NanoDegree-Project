@@ -36,6 +36,7 @@ ul#locationsList {
 }
 ul#locationsList li {
   padding:5% 0;
+  cursor: pointer;
 }
 .sidenav {
   height: 100%;

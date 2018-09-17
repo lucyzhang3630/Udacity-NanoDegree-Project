@@ -1,7 +1,9 @@
 /* eslint-disable no-undef */
 import React, { Component } from "react"
-var map
+let map
 let googleMarkers = [];
+let googleVar
+let googleInfoWindow
 
 class transitMap extends Component {
   loadGoogleMapsAPI() {
@@ -11,6 +13,7 @@ class transitMap extends Component {
         // Add a global handler when the API finishes loading
         window.resolveGoogleMapsPromise = () => {
           // resolve the promise
+          googleVar = google;
           resolve(google);
           // clean up
           delete window.resolveGoogleMapsPromise;
@@ -65,6 +68,7 @@ class transitMap extends Component {
   createInfoWindow(markers){
     return new Promise((resolve,reject)=>{
       let infoWindow = new google.maps.InfoWindow();
+      googleInfoWindow = infoWindow;
       let self = this;
       let locations = Array(5).fill(0);
       for (let i = 0; i<markers.length;i++) {
@@ -107,7 +111,7 @@ class transitMap extends Component {
       googleMarkers.push(marker);
     }
     if(googleMarkers.length===5) {
-      this.props.sendMarkers(googleMarkers);
+      this.props.sendMarkers(googleMarkers,map,googleVar,googleInfoWindow);
     }
     return marker
   }
