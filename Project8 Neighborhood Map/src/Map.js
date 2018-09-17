@@ -38,7 +38,7 @@ class transitMap extends Component {
     // Once the Google Maps API has finished loading, initialize the map
     let self = this;
 
-    this.getGoogleMaps().then((google) => {
+    this.loadGoogleMapsAPI().then((google) => {
       const center = { lat: 40.828, lng: -74.101 }
       map = new google.maps.Map(document.getElementById('map'), {
         zoom: 11,
