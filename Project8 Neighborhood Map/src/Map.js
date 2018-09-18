@@ -86,14 +86,17 @@ class transitMap extends Component {
         fetch(url).then(response => response.json())
           .then((response)=>{
 
-            let infoContent = response.response.venues[0].name;
-            let marker = self.createMarker(markers[i],map,infoContent);
+            let address = response.response.venues[0].location.formattedAddress.join();
+            let name = response.response.venues[0].name;
+            let infoContent = `<span tabindex="0" aria-label="name">${name}</span></br><span tabindex="0" aria-label="address">${address}</span>`;
+
+            let marker = self.createMarker(markers[i],map,name,address,infoContent);
             //make the locations array always have the same order as the markers
-            locations[i]=infoContent;
+            locations[i]=name;
             marker.addListener('click', function(event) {
               infoWindow.setContent(infoContent)
               infoWindow.open(map, this);
-              document.getElementById(infoContent).style.backgroundColor="#888";
+              document.getElementById(name).style.backgroundColor="#888";
             })
             google.maps.event.addListener(infoWindow,'closeclick',function(){
               const locationsListElmt = document.getElementsByTagName("LI");
@@ -114,11 +117,13 @@ class transitMap extends Component {
     })
 
   }
-  createMarker(val,map,property) {
+  createMarker(val,map,name,address,infoContent) {
     let marker = new google.maps.Marker({
       position: val,
       map:map,
-      properties:property
+      name:name,
+      address:address,
+      infoContent:infoContent
     });
     if(!googleMarkers.includes(marker)){
       googleMarkers.push(marker);

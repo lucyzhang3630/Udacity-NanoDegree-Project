@@ -52,10 +52,11 @@ class App extends Component {
       //show all locations if the filter is empty
       this.setState({locations:allLocations});
     }
+
     //if there are matched locations, show the matched marker
     if(matchedLocations&&matchedLocations.length){
       for(let i = 0;i<allMarkers.length;i++){
-        if(matchedLocations.includes(allMarkers[i].properties)) {
+        if(matchedLocations.includes(allMarkers[i].name)) {
           allMarkers[i].setVisible(true);
         }else{
           allMarkers[i].setVisible(false);
@@ -72,9 +73,9 @@ class App extends Component {
   toggleMarker(e) {
 
     for(let i=0;i<allMarkers.length;i++){
-      if(allMarkers[i].properties===e.target.innerHTML) {
+      if(allMarkers[i].name===e.target.innerHTML) {
         allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
-        infoWindowPopup.setContent(allMarkers[i].properties);
+        infoWindowPopup.setContent(allMarkers[i].infoContent);
         infoWindowPopup.open(googleMap,allMarkers[i]);
         setTimeout(() => {
           allMarkers[i].setAnimation(null)
