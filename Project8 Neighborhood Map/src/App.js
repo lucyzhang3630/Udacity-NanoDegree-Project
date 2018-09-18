@@ -89,18 +89,16 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">NJ Transit Locations</h1>
 
-          <span className="hamburger-menu" onClick={this.openNav}>&#9776; </span>
+          <span className="hamburger-menu" onClick={this.openNav} aria-label="menu" tabIndex="0">&#9776; </span>
           <div id="mySidenav" className="sidenav">
             <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
             <form onSubmit={this.handleSubmit}>
-              <label for="filter">
-                <input id="filter" type="text" value={this.state.value} onChange={this.handleChange.bind(this)} className="filter-area" />
-                Filter
-              </label>
+              <label htmlFor="filter">Filter</label>
+              <input id="filter" type="text" value={this.state.value} onChange={this.handleChange.bind(this)} className="filter-area" />
             </form>
             <ul id="locationsList">
               {this.state.locations.map((location,index)=>{
-                return (<li key={location} id={location} className={index} onClick={this.toggleMarker} tabIndex="0">{location}</li>)
+                return (<li role="button" key={location} id={location} className={index} onClick={this.toggleMarker} tabIndex="0">{location}</li>)
               })}
             </ul>
           </div>
