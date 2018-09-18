@@ -93,14 +93,14 @@ class App extends Component {
           <div id="mySidenav" className="sidenav">
             <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
             <form onSubmit={this.handleSubmit}>
-              <label>
-                <input type="text" value={this.state.value} onChange={this.handleChange.bind(this)} className="filter-area" />
+              <label for="filter">
+                <input id="filter" type="text" value={this.state.value} onChange={this.handleChange.bind(this)} className="filter-area" />
                 Filter
               </label>
             </form>
             <ul id="locationsList">
               {this.state.locations.map((location,index)=>{
-                return (<li key={location} id={location} className={index} onClick={this.toggleMarker} >{location}</li>)
+                return (<li key={location} id={location} className={index} onClick={this.toggleMarker} tabIndex="0">{location}</li>)
               })}
             </ul>
           </div>

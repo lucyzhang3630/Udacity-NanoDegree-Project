@@ -97,6 +97,9 @@ class transitMap extends Component {
               resolve(locations)
             }
           })
+          .catch(function(error) {
+            console.log(error);
+          });
       }
     })
 
@@ -118,7 +121,7 @@ class transitMap extends Component {
   render() {
     return (
       <div>
-        <div id="map" style={{height: 'calc(100vh - 70px)'}}></div>
+        <div tabIndex="0" id="map" role="application" aria-label="Map with stations" style={{height: 'calc(100vh - 70px)'}}></div>
       </div>
     )
   }
