@@ -24,7 +24,16 @@ class transitMap extends Component {
         const key = 'AIzaSyCEe2KJwjGbTaf4fDLLF0PQDYEIdjpu55E';
         script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=resolveGoogleMapsPromise`;
         script.async = true;
+        //error handling for loading Google maps api
+        script.onerror = ()=>{
+          console.log('error occured fetching Google maps API');
+          alert('The Google Maps API is not loading correctly..');
+        }
         document.body.appendChild(script);
+        //error handling for authentication failure for Google maps api
+        window.gm_authFailure = () => {
+         alert('Google Maps API authentication failed');
+       };
       });
     }
 
@@ -99,6 +108,7 @@ class transitMap extends Component {
           })
           .catch(function(error) {
             console.log(error);
+            alert('Woops, an error occurred when fetching data from Foursquare');
           });
       }
     })
